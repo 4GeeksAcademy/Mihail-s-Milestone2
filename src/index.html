@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone Test Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-1: #f3f8f7;
+        --bg-2: #ddebe8;
+        --ink: #122220;
+        --muted: #506460;
+        --card: rgba(255, 255, 255, 0.88);
+        --line: rgba(18, 34, 32, 0.12);
+        --accent: #0f766e;
+        --accent-soft: #14b8a6;
+        --shadow: 0 18px 50px rgba(15, 54, 49, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Manrope", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 16%, rgba(20, 184, 166, 0.25), transparent 38%),
+          radial-gradient(circle at 88% 12%, rgba(15, 118, 110, 0.24), transparent 34%),
+          linear-gradient(130deg, var(--bg-1), var(--bg-2));
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+
+      .shell {
+        width: min(980px, 100%);
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.1rem 1.3rem;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.65);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+        box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.18);
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-size: 1rem;
+        letter-spacing: 0.01em;
+        font-weight: 700;
+      }
+
+      .badge {
+        border: 1px solid rgba(15, 118, 110, 0.25);
+        color: #115e59;
+        background: rgba(20, 184, 166, 0.1);
+        border-radius: 999px;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .content {
+        padding: clamp(1.5rem, 3.8vw, 2.8rem);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 1.3rem;
+        align-items: stretch;
+      }
+
+      .intro {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 1.6rem;
+        background: rgba(255, 255, 255, 0.85);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.74rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: currentColor;
+      }
+
+      h2 {
+        margin: 0.85rem 0 0.7rem;
+        font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+        line-height: 1.15;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .actions {
+        margin-top: 1.2rem;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 12px;
+        padding: 0.68rem 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .btn.primary {
+        color: #f9fefd;
+        background: linear-gradient(135deg, var(--accent), #0a8f84);
+        box-shadow: 0 10px 22px rgba(15, 118, 110, 0.25);
+      }
+
+      .btn.ghost {
+        color: #0f5e57;
+        border: 1px solid rgba(15, 118, 110, 0.26);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .panel {
+        border-radius: 18px;
+        border: 1px solid rgba(15, 118, 110, 0.16);
+        background:
+          linear-gradient(160deg, rgba(15, 118, 110, 0.95), rgba(17, 94, 89, 0.92)),
+          #115e59;
+        color: #ddfffb;
+        padding: 1.35rem;
+        display: grid;
+        gap: 0.95rem;
+      }
+
+      .panel .value {
+        font-size: clamp(2.1rem, 4vw, 2.8rem);
+        line-height: 1;
+        font-weight: 800;
+      }
+
+      .panel small {
+        color: rgba(221, 255, 251, 0.85);
+      }
+
+      .metrics {
+        margin-top: 1.3rem;
+        display: grid;
+        gap: 0.85rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .metric b {
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .shell {
+        animation: appear 480ms ease both;
+      }
+
+      .hero > * {
+        animation: appear 620ms ease both;
+      }
+
+      .hero > :nth-child(2) {
+        animation-delay: 120ms;
+      }
+
+      @media (max-width: 840px) {
+        body {
+          padding: 1.2rem;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .badge {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell" aria-label="Milestone test page">
+      <header class="topbar">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <h1>Milestone UI Sandbox</h1>
+        </div>
+        <span class="badge">Ready to test</span>
+      </header>
+
+      <section class="content">
+        <div class="hero">
+          <article class="intro">
+            <span class="eyebrow">Frontend Preview</span>
+            <h2>Professional layout for quick interface checks</h2>
+            <p>
+              This page is designed as a clean test surface: strong visual hierarchy,
+              responsive spacing, and modern styling that works well on desktop and mobile.
+            </p>
+            <div class="actions">
+              <button class="btn primary" type="button">Run Visual Test</button>
+              <button class="btn ghost" type="button">Inspect Components</button>
+            </div>
+          </article>
+
+          <aside class="panel" aria-label="Summary panel">
+            <small>Prototype health</small>
+            <div class="value">98%</div>
+            <small>Stable rendering across major viewport widths</small>
+          </aside>
+        </div>
+
+        <div class="metrics" aria-label="Quick metrics">
+          <article class="metric">
+            <b>1200px</b>
+            <span>Desktop breakpoint target</span>
+          </article>
+          <article class="metric">
+            <b>840px</b>
+            <span>Tablet optimization point</span>
+          </article>
+          <article class="metric">
+            <b>100%</b>
+            <span>Mobile-friendly by default</span>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
