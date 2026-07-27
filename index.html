@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackFlow | Last-Mile Delivery and Warehouse Management</title>
+    <meta
+      name="description"
+      content="TrackFlow powers end-to-end logistics for e-commerce brands across the United States and Spain."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TrackFlow",
+        "foundingDate": "2009",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Los Angeles",
+            "addressCountry": "US"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Zaragoza",
+            "addressCountry": "ES"
+          }
+        ],
+        "areaServed": ["US", "ES"],
+        "numberOfEmployees": "130",
+        "description": "Last-mile delivery and warehouse management for e-commerce brands.",
+        "url": "https://trackflow.example"
+      }
+    </script>
+  </head>
+  <body data-page="index" class="bg-white font-['Manrope'] text-slate-800 antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-md focus:bg-lime-300 focus:px-3 focus:py-2 focus:text-slate-900"
+      >Skip to content</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-emerald-100 bg-white/95 backdrop-blur" role="banner">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex items-center gap-3" aria-label="TrackFlow home">
+          <img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=120&q=80"
+            alt="TrackFlow logistics hub icon"
+            class="h-10 w-10 rounded-xl object-cover"
+          />
+          <div>
+            <p class="font-['Space_Grotesk'] text-xl font-semibold tracking-tight text-emerald-700">TrackFlow</p>
+            <p data-i18n="logo_tagline" class="text-xs uppercase tracking-[0.2em] text-emerald-500">US + Spain Logistics</p>
+          </div>
+        </a>
+
+        <nav aria-label="Primary" class="hidden items-center gap-6 md:flex">
+          <a data-i18n="nav_features" href="#features" class="text-sm font-medium text-slate-700 transition hover:text-emerald-700">Features</a>
+          <a data-i18n="nav_how" href="#how-it-works" class="text-sm font-medium text-slate-700 transition hover:text-emerald-700">How it works</a>
+          <a data-i18n="nav_why" href="#why-trackflow" class="text-sm font-medium text-slate-700 transition hover:text-emerald-700">Why TrackFlow</a>
+          <a
+            href="application.html"
+            data-i18n="nav_apply"
+            class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500"
+            >Apply now</a
+          >
+          <button
+            id="languageToggle"
+            type="button"
+            class="rounded-lg border border-emerald-300 px-3 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
+            aria-label="Toggle website language"
+          >
+            ES
+          </button>
+        </nav>
+
+        <a
+          href="application.html"
+          class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500 md:hidden"
+          aria-label="Go to application form"
+          data-i18n="mobile_apply"
+          >Apply</a
+        >
+      </div>
+    </header>
+
+    <main id="main-content" role="main">
+      <section class="relative overflow-hidden" aria-labelledby="hero-title">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(132,204,22,0.22),transparent_42%),radial-gradient(circle_at_85%_0%,rgba(250,204,21,0.26),transparent_40%)]"></div>
+        <div class="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+          <article>
+            <p data-i18n="hero_badge" class="mb-4 inline-flex rounded-full border border-lime-300 bg-lime-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
+              Founded in Los Angeles, scaling across two countries
+            </p>
+            <h1 id="hero-title" data-i18n="hero_title" class="font-['Space_Grotesk'] text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              Your parcels move. Your team focuses on growth.
+            </h1>
+            <p data-i18n="hero_text" class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+              TrackFlow runs your entire logistics operation, from storage and pick-pack to carrier delivery and returns,
+              so your brand can focus on selling while we handle the physical complexity.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="application.html"
+                id="startApplicationBtn"
+                data-i18n="hero_cta_start"
+                class="rounded-xl bg-emerald-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-500"
+                aria-label="Start the TrackFlow application form"
+                >Start application</a
+              >
+              <a
+                href="#how-it-works"
+                id="seeHowItWorksBtn"
+                data-i18n="hero_cta_how"
+                class="rounded-xl border border-emerald-300 bg-white px-6 py-3 text-center text-sm font-semibold text-emerald-700 transition hover:border-lime-400 hover:text-emerald-800"
+                aria-controls="how-it-works"
+                >See how it works</a
+              >
+            </div>
+            <p id="ctaStatus" class="mt-3 text-sm text-emerald-700" role="status" aria-live="polite"></p>
+            <p data-i18n="run_command_label" class="mt-6 text-sm text-slate-500">
+              Local run command in Codespaces: <span class="font-semibold text-emerald-700">npx serve .</span>
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-emerald-100 bg-white p-5 shadow-xl shadow-emerald-100/70 sm:p-6">
+            <img
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+              alt="Warehouse staff scanning boxes for outbound shipments"
+              class="h-64 w-full rounded-2xl object-cover sm:h-72"
+            />
+            <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+              <div class="rounded-xl bg-lime-50 p-3">
+                <p class="font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">130</p>
+                <p data-i18n="stat_team" class="text-xs text-slate-600">Team members</p>
+              </div>
+              <div class="rounded-xl bg-lime-50 p-3">
+                <p class="font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">2</p>
+                <p data-i18n="stat_countries" class="text-xs text-slate-600">Countries</p>
+              </div>
+              <div class="rounded-xl bg-lime-50 p-3">
+                <p class="font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">8</p>
+                <p data-i18n="stat_carriers" class="text-xs text-slate-600">Carrier partners</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="features-title">
+        <h2 id="features-title" data-i18n="features_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">Core capabilities</h2>
+        <p data-i18n="features_text" class="mt-4 max-w-3xl text-slate-600">
+          TrackFlow Tech modernizes operations with integrated logistics systems for warehouses, carriers, returns, and customer support.
+        </p>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
+            <h3 data-i18n="feature_1_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Unified inventory visibility</h3>
+            <p data-i18n="feature_1_text" class="mt-3 text-sm leading-6 text-slate-600">
+              One real-time view of stock across Los Angeles and Zaragoza to eliminate blind spots and stockouts.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
+            <h3 data-i18n="feature_2_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Smart carrier orchestration</h3>
+            <p data-i18n="feature_2_text" class="mt-3 text-sm leading-6 text-slate-600">
+              Select the right carrier by destination, urgency, and weight with explainable recommendations.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
+            <h3 data-i18n="feature_3_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Automated returns flow</h3>
+            <p data-i18n="feature_3_text" class="mt-3 text-sm leading-6 text-slate-600">
+              Rules-driven approvals and AI-assisted product condition checks reduce delays and manual workload.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="bg-emerald-50 py-14" aria-labelledby="how-title">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="how-title" data-i18n="how_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">How it works</h2>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            <article class="rounded-2xl border border-lime-300 bg-lime-50 p-6">
+              <p data-i18n="how_step_1" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 01</p>
+              <h3 data-i18n="how_1_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Connect your channels</h3>
+              <p data-i18n="how_1_text" class="mt-3 text-sm leading-6 text-slate-600">
+                Share order sources and priorities. We map your SKUs, fulfillment rules, and SLAs.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-yellow-300 bg-yellow-50 p-6">
+              <p data-i18n="how_step_2" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 02</p>
+              <h3 data-i18n="how_2_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Operate in real time</h3>
+              <p data-i18n="how_2_text" class="mt-3 text-sm leading-6 text-slate-600">
+                Inventory, shipment status, incidents, and returns are visible through centralized dashboards.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-emerald-300 bg-emerald-50 p-6">
+              <p data-i18n="how_step_3" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 03</p>
+              <h3 data-i18n="how_3_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Scale with confidence</h3>
+              <p data-i18n="how_3_text" class="mt-3 text-sm leading-6 text-slate-600">
+                Automated reporting, alerting, and customer support improve speed, margin, and retention.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-trackflow" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="why-title">
+        <h2 id="why-title" data-i18n="why_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">Built for real-world logistics complexity</h2>
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <article class="rounded-2xl border border-yellow-200 bg-yellow-50 p-6">
+            <h3 data-i18n="why_1_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Cross-border from day one</h3>
+            <p data-i18n="why_1_text" class="mt-3 text-sm leading-6 text-slate-600">
+              Operations in two countries, multilingual workflows, and carrier diversity with one coordinated operating model.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-lime-200 bg-lime-50 p-6">
+            <h3 data-i18n="why_2_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Data that drives decisions</h3>
+            <p data-i18n="why_2_text" class="mt-3 text-sm leading-6 text-slate-600">
+              Executive dashboards and automated weekly reporting provide fresher insight than manual spreadsheet cycles.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-14" aria-labelledby="snapshot-title">
+        <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="snapshot-title" data-i18n="snapshot_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">
+            Company snapshot from TrackFlow briefing
+          </h2>
+          <p data-i18n="snapshot_text" class="mt-4 max-w-3xl text-slate-600">
+            Facts below come from the internal TrackFlow briefing and summarize the current company context.
+          </p>
+
+          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-2xl border border-slate-200 bg-white p-5">
+              <p data-i18n="snapshot_card_1_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Founded</p>
+              <p data-i18n="snapshot_card_1_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">2009</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5">
+              <p data-i18n="snapshot_card_2_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Annual revenue</p>
+              <p data-i18n="snapshot_card_2_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">~EUR 9M</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5">
+              <p data-i18n="snapshot_card_3_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Active markets</p>
+              <p data-i18n="snapshot_card_3_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">US + Spain</p>
+            </article>
+            <article class="rounded-2xl border border-slate-200 bg-white p-5">
+              <p data-i18n="snapshot_card_4_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Team size</p>
+              <p data-i18n="snapshot_card_4_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">~130 people</p>
+            </article>
+          </div>
+
+          <div class="mt-8 grid gap-5 lg:grid-cols-2">
+            <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+              <h3 data-i18n="snapshot_leadership_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Leadership and structure</h3>
+              <p data-i18n="snapshot_leadership_text" class="mt-3 text-sm leading-6 text-slate-600">
+                CEO Thomas Harry leads from Los Angeles, while CTO Andres Kim runs technology from Zaragoza.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-yellow-200 bg-yellow-50 p-6">
+              <h3 data-i18n="snapshot_pain_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Current operational gaps</h3>
+              <p data-i18n="snapshot_pain_text" class="mt-3 text-sm leading-6 text-slate-600">
+                Inventory is fragmented across warehouses, carrier operations are manual, and reporting is assembled by hand.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-emerald-100 bg-white" role="contentinfo">
+      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:px-8">
+        <section aria-labelledby="contact-title">
+          <h2 id="contact-title" data-i18n="contact_title" class="font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Contact</h2>
+          <p data-i18n="contact_email" class="mt-3 text-sm text-slate-600">Email: growth@trackflow.example</p>
+          <p data-i18n="contact_phone" class="mt-1 text-sm text-slate-600">Phone: +1 213 555 0198</p>
+          <p data-i18n="contact_location" class="mt-1 text-sm text-slate-600">Los Angeles, US and Zaragoza, ES</p>
+        </section>
+        <section aria-label="Action links" class="md:justify-self-end">
+          <a
+            href="application.html"
+            data-i18n="footer_cta"
+            class="inline-flex rounded-lg bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+            aria-label="Open TrackFlow application form"
+            >Apply to onboard your brand</a
+          >
+          <p data-i18n="footer_tagline" class="mt-4 text-xs text-slate-500">TrackFlow Tech | Last-mile delivery and warehouse management</p>
+        </section>
+      </div>
+      <p
+        data-i18n="footer_rights"
+        class="border-t border-emerald-100 px-4 py-4 text-center text-sm font-medium text-slate-600"
+      >
+        © 2026 TrackFlow. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="language.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
