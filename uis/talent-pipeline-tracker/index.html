@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talent Pipeline Tracker | People &amp; Talent</title>
+    <meta
+      name="description"
+      content="Internal tool for the People and Talent team to track candidates across the recruitment pipeline."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-slate-100 font-sans text-slate-800">
+    <a
+      href="#candidateList"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+      >Skip to candidate list</a
+    >
+
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-5 sm:px-6">
+        <div class="flex-1">
+          <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600">People &amp; Talent</p>
+          <h1 class="text-2xl font-bold text-slate-900">Talent Pipeline Tracker</h1>
+        </div>
+        <button
+          id="newCandidateBtn"
+          type="button"
+          class="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          + New candidate
+        </button>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+      <!-- Pipeline summary -->
+      <section aria-label="Pipeline summary" class="mb-6">
+        <ul id="summaryList" class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"></ul>
+      </section>
+
+      <!-- Filters -->
+      <section aria-label="Filters" class="mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <form id="filtersForm" class="grid gap-4 md:grid-cols-4" novalidate>
+          <div class="md:col-span-2">
+            <label for="searchInput" class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500"
+              >Search by name or email</label
+            >
+            <input
+              id="searchInput"
+              name="search"
+              type="search"
+              autocomplete="off"
+              placeholder="e.g. maria or maria@company.com"
+              class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label for="statusFilter" class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500"
+              >Status</label
+            >
+            <select
+              id="statusFilter"
+              name="status"
+              class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            ></select>
+          </div>
+          <div>
+            <label for="stageFilter" class="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500"
+              >Stage</label
+            >
+            <select
+              id="stageFilter"
+              name="stage"
+              class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            ></select>
+          </div>
+        </form>
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+          <p id="resultsSummary" class="text-sm text-slate-500" aria-live="polite">Loading candidates…</p>
+          <button
+            id="clearFiltersBtn"
+            type="button"
+            class="text-sm font-semibold text-indigo-600 underline-offset-2 hover:underline"
+          >
+            Clear filters
+          </button>
+        </div>
+      </section>
+
+      <!-- Candidate list -->
+      <section aria-label="Candidates">
+        <div id="listError" class="hidden rounded-xl border border-red-200 bg-red-50 p-5 text-center" role="alert">
+          <p class="font-semibold text-red-800">We couldn't load the candidates.</p>
+          <p id="listErrorMessage" class="mt-1 text-sm text-red-700"></p>
+          <button
+            id="retryBtn"
+            type="button"
+            class="mt-3 rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700"
+          >
+            Try again
+          </button>
+        </div>
+
+        <div id="listEmpty" class="hidden rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
+          <p class="font-semibold text-slate-700">No candidates match these filters.</p>
+          <p class="mt-1 text-sm text-slate-500">Adjust the search, status or stage to see more results.</p>
+        </div>
+
+        <ul id="candidateList" class="grid gap-3" aria-busy="false"></ul>
+
+        <nav
+          id="pagination"
+          class="mt-6 hidden flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+          aria-label="Pagination"
+        >
+          <button
+            id="prevPageBtn"
+            type="button"
+            class="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            ← Previous
+          </button>
+          <p id="pageIndicator" class="text-sm text-slate-600"></p>
+          <button
+            id="nextPageBtn"
+            type="button"
+            class="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Next →
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <!-- Candidate detail panel -->
+    <div id="detailOverlay" class="fixed inset-0 z-40 hidden bg-slate-900/50" data-close-detail></div>
+    <aside
+      id="detailPanel"
+      class="fixed inset-y-0 right-0 z-50 hidden w-full max-w-xl translate-x-0 overflow-y-auto bg-white shadow-2xl"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detailName"
+      tabindex="-1"
+    >
+      <div class="sticky top-0 flex items-start gap-4 border-b border-slate-200 bg-white px-5 py-4">
+        <div class="flex-1">
+          <h2 id="detailName" class="text-xl font-bold text-slate-900">Candidate</h2>
+          <p id="detailPosition" class="text-sm text-slate-500"></p>
+        </div>
+        <button
+          type="button"
+          data-close-detail
+          aria-label="Close candidate detail"
+          class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+        >
+          Close
+        </button>
+      </div>
+      <div id="detailBody" class="px-5 py-5"></div>
+    </aside>
+
+    <!-- Candidate form modal -->
+    <div id="formOverlay" class="fixed inset-0 z-40 hidden bg-slate-900/50" data-close-form></div>
+    <div
+      id="formModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="formTitle"
+    >
+      <div class="max-h-full w-full max-w-lg overflow-y-auto rounded-xl bg-white shadow-2xl">
+        <div class="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+          <h2 id="formTitle" class="text-lg font-bold text-slate-900">New candidate</h2>
+          <button
+            type="button"
+            data-close-form
+            aria-label="Close form"
+            class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+          >
+            Close
+          </button>
+        </div>
+        <form id="candidateForm" class="grid gap-4 px-5 py-5" novalidate>
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700" for="fullNameInput">Full name *</label>
+            <input id="fullNameInput" name="full_name" type="text" required class="form-input" />
+            <p class="field-error" data-error-for="full_name"></p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-sm font-semibold text-slate-700" for="emailInput">Email *</label>
+              <input id="emailInput" name="email" type="email" required class="form-input" />
+              <p class="field-error" data-error-for="email"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold text-slate-700" for="phoneInput">Phone *</label>
+              <input id="phoneInput" name="phone" type="tel" required class="form-input" />
+              <p class="field-error" data-error-for="phone"></p>
+            </div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-sm font-semibold text-slate-700" for="positionInput">Position *</label>
+              <input id="positionInput" name="position" type="text" required class="form-input" />
+              <p class="field-error" data-error-for="position"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold text-slate-700" for="experienceInput"
+                >Years of experience *</label
+              >
+              <input
+                id="experienceInput"
+                name="experience_years"
+                type="number"
+                min="0"
+                max="60"
+                step="0.5"
+                required
+                class="form-input"
+              />
+              <p class="field-error" data-error-for="experience_years"></p>
+            </div>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700" for="linkedinInput">LinkedIn URL</label>
+            <input id="linkedinInput" name="linkedin_url" type="url" class="form-input" />
+            <p class="field-error" data-error-for="linkedin_url"></p>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700" for="cvInput">CV URL</label>
+            <input id="cvInput" name="cv_url" type="url" class="form-input" />
+            <p class="field-error" data-error-for="cv_url"></p>
+          </div>
+          <p id="formError" class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert"></p>
+          <div class="flex justify-end gap-3 border-t border-slate-200 pt-4">
+            <button
+              type="button"
+              data-close-form
+              class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              Cancel
+            </button>
+            <button
+              id="formSubmitBtn"
+              type="submit"
+              class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+            >
+              Save candidate
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="toastRegion" class="fixed bottom-4 right-4 z-[60] flex w-80 flex-col gap-2" aria-live="polite"></div>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
