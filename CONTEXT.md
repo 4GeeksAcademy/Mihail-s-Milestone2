@@ -1,16 +1,5 @@
-# Your company context
+# TrackFlow project context
 
-**Replace this file** with the CONTEXT for your assigned company:
+TrackFlow is the working company context for this repository, based on the existing TrackFlow milestone materials. It provides last-mile delivery, warehousing, carrier management, and returns services for e-commerce brands. See the [project brief](memory-bank/projectbrief.md) for business context and the unresolved market-source discrepancy, [technical context](memory-bank/techContext.md) for repository conventions and commands, and [progress](memory-bank/progress.md) for the development state.
 
-- **Brasaland** — `CONTEXT-brasaland-briefing.md` (grilled food restaurant chain, Colombia + Florida)
-- **TrackFlow** — `CONTEXT-trackflow-briefing.md` (last-mile delivery and warehouse, Mexico + Spain)
-- **Nexova** — `CONTEXT-nexova-briefing.md` (HR consulting and talent acquisition, Chile + Argentina)
-- **HealthCore** — `CONTEXT-healthcore-briefing.md` (outpatient healthcare clinic network, US + UK)
-
-Your instructor or milestone materials will point you to the correct CONTEXT file. Copy its contents here so that all project work and AI assistance use the same domain data, field names, and constraints.
-
----
-
-_Until you add your context, keep this placeholder so the repo structure is clear._
-
-_Estas instrucciones también están disponibles en [español](./CONTEXT.es.md)._
+Before making company-specific decisions, read the memory bank. The repository's original scenario label and detailed TrackFlow briefing contain conflicting market claims, and the assigned course briefing is not present in this repository. Keep geographic claims out of user-facing content and do not make country-specific legal, operational, or policy assumptions until the project owner supplies or confirms the authoritative briefing.
