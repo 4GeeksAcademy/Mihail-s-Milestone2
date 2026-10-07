@@ -4,7 +4,7 @@ An independently runnable internal operations entry view for the TrackFlow monor
 
 ## Demo data
 
-All shipment rows and summary counts are illustrative examples implemented locally in `app.js`. This page has no API connection and does not display live company operations. Warehouse sites, destinations, and carriers use generic labels because the assigned company briefing has not confirmed market geography; see `memory-bank/projectbrief.md`.
+All shipment rows and summary counts are illustrative examples implemented locally in `app.js`. This page has no API connection and does not display live company operations. Warehouse sites, destinations, and carriers use generic labels to keep sample records clearly illustrative; see `memory-bank/projectbrief.md` for the company facts.
 
 ## Technology
 

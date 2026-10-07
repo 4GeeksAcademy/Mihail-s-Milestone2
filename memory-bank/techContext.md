@@ -7,7 +7,7 @@ This is a company-project monorepo. User interfaces belong in `uis/`, backend AP
 ## Applications
 
 - Root application: Next.js 15, React 19, and TypeScript, with App Router code in `app/`, reusable UI in `components/`, candidate API helpers in `lib/`, and candidate types in `types/`. The current root application is a candidate-pipeline demo; do not treat it as TrackFlow domain truth.
-- `uis/website/`: the existing TrackFlow public site, implemented as static HTML and vanilla JavaScript with Tailwind loaded from its CDN. Its entry points are `index.html` and `application.html`; local scripts are `index.js`, `language.js`, and `validation.js`.
+- `uis/website/`: the existing TrackFlow public site, implemented as static HTML and vanilla JavaScript with Tailwind loaded from its CDN. Its entry points are `index.html` and `application.html`; `components.js` renders shared data-driven homepage cards, while `index.js`, `language.js`, and `validation.js` handle page interactions, localization, and form validation.
 - `uis/backoffice/`: TrackFlow internal operations UI, implemented as static HTML/CSS/vanilla JavaScript with sample-only metrics. Its entry view is `index.html`; it has no live API connection.
 - `uis/talent-pipeline-tracker/`: a separate static candidate-tracker project that talks to the 4Geeks tracker API. It is not a TrackFlow operations application.
 
@@ -32,5 +32,5 @@ There is no root test script currently. Use the narrowest relevant runtime smoke
 - Keep public and internal interfaces in their canonical `uis/website` and `uis/backoffice` directories.
 - Backend work belongs under `services/`; do not add an API merely to support a static entry view.
 - Preserve unrelated milestone work and inspect `git status` before staging or committing.
-- Keep user-facing company content geographically neutral until the authoritative assigned briefing is available.
+- Treat root `CONTEXT.md` as the authoritative company briefing. It identifies Thomas Harry as CEO and Daniel Espinoza as the creator of TrackFlow Tech.
 - Update this memory when architecture, app entry points, commands, or verified domain decisions change.
