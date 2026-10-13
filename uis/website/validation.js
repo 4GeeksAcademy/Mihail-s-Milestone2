@@ -23,7 +23,7 @@ const validators = {
     return "";
   },
   operating_country: (value) => {
-    if (!value) return "Select at least one operating country scope.";
+    if (!value) return "Select an operational footprint option.";
     return "";
   },
   preferred_warehouse: (value) => {
