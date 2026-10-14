@@ -7,7 +7,14 @@ This is a company-project monorepo. User interfaces belong in `uis/`, backend AP
 ## Applications
 
 - Root application: Next.js 15, React 19, and TypeScript, with App Router code in `app/`, reusable UI in `components/`, candidate API helpers in `lib/`, and candidate types in `types/`. The current root application is a candidate-pipeline demo; do not treat it as TrackFlow domain truth.
-- `uis/website/`: the existing TrackFlow public site, implemented as static HTML and vanilla JavaScript with Tailwind loaded from its CDN. Its entry points are `index.html` and `application.html`; `components.js` renders shared data-driven homepage cards, while `index.js`, `language.js`, and `validation.js` handle page interactions, localization, and form validation.
+- `uis/website/`: standalone Next.js 15, React 19, and TypeScript app. App Router pages are `/` (corporate homepage) and `/application` (locally validated simulated onboarding form). Reusable typed site sections are in `app/components.tsx`; its own `package.json` runs the development server on port 3000.
+- `uis/backoffice/`: standalone Next.js 15, React 19, and TypeScript app with an independent operations layout. Typed local sample data in `lib/demo-data.ts` is passed through the existing M2 algorithms imported directly from root `src/utils/`; `app/dashboard.tsx` renders shipment activity and computed analytics. Its own `package.json` runs the development server on port 3001. There is no live API connection.
+| Run public website | `npm --prefix uis/website run dev` (port 3000) |
+| Typecheck public website | `npm --prefix uis/website run typecheck` |
+| Build public website | `npm --prefix uis/website run build` |
+| Run backoffice | `npm --prefix uis/backoffice run dev` (port 3001) |
+| Typecheck backoffice | `npm --prefix uis/backoffice run typecheck` |
+| Build backoffice | `npm --prefix uis/backoffice run build` |
 - `uis/backoffice/`: TrackFlow internal operations UI, implemented as static HTML/CSS/vanilla JavaScript with sample-only metrics. Its entry view is `index.html`; it has no live API connection.
 - `uis/talent-pipeline-tracker/`: a separate static candidate-tracker project that talks to the 4Geeks tracker API. It is not a TrackFlow operations application.
 
@@ -24,11 +31,11 @@ Run from the repository root unless stated otherwise:
 | Serve public website | `python3 -m http.server 8080 --directory uis/website` |
 | Serve backoffice | `python3 -m http.server 8081 --directory uis/backoffice` |
 
-There is no root test script currently. Use the narrowest relevant runtime smoke check for static apps, and report checks that do not exist rather than claiming they passed.
+There is no root test script or app-specific test harness currently. Validate the independent Next.js apps with their typecheck/build scripts and runtime route checks; report checks that do not exist rather than claiming they passed.
 
 ## Conventions and constraints
 
-- Follow the owning app's existing stack; do not add a framework or dependency for a static page.
+- Follow the owning app's existing stack; keep the public website and internal backoffice independently runnable in their canonical folders.
 - Keep public and internal interfaces in their canonical `uis/website` and `uis/backoffice` directories.
 - Backend work belongs under `services/`; do not add an API merely to support a static entry view.
 - Preserve unrelated milestone work and inspect `git status` before staging or committing.
