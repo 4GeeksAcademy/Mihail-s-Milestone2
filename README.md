@@ -49,12 +49,13 @@ You are building **one company** across many milestones and projects. Each top-l
 
 ---
 
-## Current status of the template
+## Current project status
 
-> 💡 This repository currently provides a **base folder structure and documentation skeleton** only. It does not include runnable apps or global scripts yet.
+> This TrackFlow repository now contains its AI-agent instructions and memory bank, a public website under `uis/website/`, and an independently runnable operations demo under `uis/backoffice/`.
 >
-> - `CONTEXT.md` is a placeholder and must be replaced with your assigned company context.
-> - There is no root `AGENTS.md` yet.
+> - `CONTEXT.md` contains the assigned TrackFlow company briefing and is the primary source for business facts. It identifies Thomas Harry as CEO and Daniel Espinoza as the creator of TrackFlow Tech.
+> - `AGENTS.md` and `.agents/` define repository-wide agent workflow, scoped conventions, and the reusable delivery-verification skill.
+> - The public website and backoffice run as static applications using the commands in their respective READMEs. Root npm scripts serve the separate Next.js candidate-pipeline demo.
 > - Shared package metadata exists in `packages/shared/package.json` (`@repo/shared-types`), but no workspace runner is configured at root.
 
 ---

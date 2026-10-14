@@ -6,7 +6,7 @@
     <title>TrackFlow | Last-Mile Delivery and Warehouse Management</title>
     <meta
       name="description"
-      content="TrackFlow powers end-to-end logistics for e-commerce brands across the United States and Spain."
+      content="TrackFlow powers end-to-end logistics for e-commerce brands."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,19 +21,6 @@
         "@type": "Organization",
         "name": "TrackFlow",
         "foundingDate": "2009",
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "addressLocality": "Los Angeles",
-            "addressCountry": "US"
-          },
-          {
-            "@type": "PostalAddress",
-            "addressLocality": "Zaragoza",
-            "addressCountry": "ES"
-          }
-        ],
-        "areaServed": ["US", "ES"],
         "numberOfEmployees": "130",
         "description": "Last-mile delivery and warehouse management for e-commerce brands.",
         "url": "https://trackflow.example"
@@ -57,7 +44,7 @@
           />
           <div>
             <p class="font-['Space_Grotesk'] text-xl font-semibold tracking-tight text-emerald-700">TrackFlow</p>
-            <p data-i18n="logo_tagline" class="text-xs uppercase tracking-[0.2em] text-emerald-500">US + Spain Logistics</p>
+            <p data-i18n="logo_tagline" class="text-xs uppercase tracking-[0.2em] text-emerald-500">End-to-end logistics</p>
           </div>
         </a>
 
@@ -97,7 +84,7 @@
         <div class="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
           <article>
             <p data-i18n="hero_badge" class="mb-4 inline-flex rounded-full border border-lime-300 bg-lime-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">
-              Founded in Los Angeles, scaling across two countries
+              Integrated logistics for growing e-commerce brands
             </p>
             <h1 id="hero-title" data-i18n="hero_title" class="font-['Space_Grotesk'] text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Your parcels move. Your team focuses on growth.
@@ -143,7 +130,7 @@
               </div>
               <div class="rounded-xl bg-lime-50 p-3">
                 <p class="font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">2</p>
-                <p data-i18n="stat_countries" class="text-xs text-slate-600">Countries</p>
+                <p data-i18n="stat_countries" class="text-xs text-slate-600">Warehouse sites</p>
               </div>
               <div class="rounded-xl bg-lime-50 p-3">
                 <p class="font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">8</p>
@@ -159,72 +146,21 @@
         <p data-i18n="features_text" class="mt-4 max-w-3xl text-slate-600">
           TrackFlow Tech modernizes operations with integrated logistics systems for warehouses, carriers, returns, and customer support.
         </p>
-        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
-            <h3 data-i18n="feature_1_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Unified inventory visibility</h3>
-            <p data-i18n="feature_1_text" class="mt-3 text-sm leading-6 text-slate-600">
-              One real-time view of stock across Los Angeles and Zaragoza to eliminate blind spots and stockouts.
-            </p>
-          </article>
-          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
-            <h3 data-i18n="feature_2_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Smart carrier orchestration</h3>
-            <p data-i18n="feature_2_text" class="mt-3 text-sm leading-6 text-slate-600">
-              Select the right carrier by destination, urgency, and weight with explainable recommendations.
-            </p>
-          </article>
-          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-md shadow-emerald-100/60">
-            <h3 data-i18n="feature_3_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Automated returns flow</h3>
-            <p data-i18n="feature_3_text" class="mt-3 text-sm leading-6 text-slate-600">
-              Rules-driven approvals and AI-assisted product condition checks reduce delays and manual workload.
-            </p>
-          </article>
+        <div id="featureCards" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         </div>
       </section>
 
       <section id="how-it-works" class="bg-emerald-50 py-14" aria-labelledby="how-title">
         <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 id="how-title" data-i18n="how_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">How it works</h2>
-          <div class="mt-8 grid gap-5 md:grid-cols-3">
-            <article class="rounded-2xl border border-lime-300 bg-lime-50 p-6">
-              <p data-i18n="how_step_1" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 01</p>
-              <h3 data-i18n="how_1_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Connect your channels</h3>
-              <p data-i18n="how_1_text" class="mt-3 text-sm leading-6 text-slate-600">
-                Share order sources and priorities. We map your SKUs, fulfillment rules, and SLAs.
-              </p>
-            </article>
-            <article class="rounded-2xl border border-yellow-300 bg-yellow-50 p-6">
-              <p data-i18n="how_step_2" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 02</p>
-              <h3 data-i18n="how_2_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Operate in real time</h3>
-              <p data-i18n="how_2_text" class="mt-3 text-sm leading-6 text-slate-600">
-                Inventory, shipment status, incidents, and returns are visible through centralized dashboards.
-              </p>
-            </article>
-            <article class="rounded-2xl border border-emerald-300 bg-emerald-50 p-6">
-              <p data-i18n="how_step_3" class="text-xs uppercase tracking-[0.2em] text-emerald-700">Step 03</p>
-              <h3 data-i18n="how_3_title" class="mt-3 font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Scale with confidence</h3>
-              <p data-i18n="how_3_text" class="mt-3 text-sm leading-6 text-slate-600">
-                Automated reporting, alerting, and customer support improve speed, margin, and retention.
-              </p>
-            </article>
+          <div id="processSteps" class="mt-8 grid gap-5 md:grid-cols-3">
           </div>
         </div>
       </section>
 
       <section id="why-trackflow" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="why-title">
         <h2 id="why-title" data-i18n="why_title" class="font-['Space_Grotesk'] text-3xl font-bold text-slate-900 sm:text-4xl">Built for real-world logistics complexity</h2>
-        <div class="mt-8 grid gap-6 lg:grid-cols-2">
-          <article class="rounded-2xl border border-yellow-200 bg-yellow-50 p-6">
-            <h3 data-i18n="why_1_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Cross-border from day one</h3>
-            <p data-i18n="why_1_text" class="mt-3 text-sm leading-6 text-slate-600">
-              Operations in two countries, multilingual workflows, and carrier diversity with one coordinated operating model.
-            </p>
-          </article>
-          <article class="rounded-2xl border border-lime-200 bg-lime-50 p-6">
-            <h3 data-i18n="why_2_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Data that drives decisions</h3>
-            <p data-i18n="why_2_text" class="mt-3 text-sm leading-6 text-slate-600">
-              Executive dashboards and automated weekly reporting provide fresher insight than manual spreadsheet cycles.
-            </p>
-          </article>
+        <div id="reasonCards" class="mt-8 grid gap-6 lg:grid-cols-2">
         </div>
       </section>
 
@@ -237,38 +173,10 @@
             Facts below come from the internal TrackFlow briefing and summarize the current company context.
           </p>
 
-          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="rounded-2xl border border-slate-200 bg-white p-5">
-              <p data-i18n="snapshot_card_1_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Founded</p>
-              <p data-i18n="snapshot_card_1_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">2009</p>
-            </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-5">
-              <p data-i18n="snapshot_card_2_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Annual revenue</p>
-              <p data-i18n="snapshot_card_2_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">~EUR 9M</p>
-            </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-5">
-              <p data-i18n="snapshot_card_3_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Active markets</p>
-              <p data-i18n="snapshot_card_3_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">US + Spain</p>
-            </article>
-            <article class="rounded-2xl border border-slate-200 bg-white p-5">
-              <p data-i18n="snapshot_card_4_label" class="text-xs uppercase tracking-[0.2em] text-slate-500">Team size</p>
-              <p data-i18n="snapshot_card_4_value" class="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-emerald-700">~130 people</p>
-            </article>
+          <div id="snapshotStats" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           </div>
 
-          <div class="mt-8 grid gap-5 lg:grid-cols-2">
-            <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-              <h3 data-i18n="snapshot_leadership_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Leadership and structure</h3>
-              <p data-i18n="snapshot_leadership_text" class="mt-3 text-sm leading-6 text-slate-600">
-                CEO Thomas Harry leads from Los Angeles, while CTO Andres Kim runs technology from Zaragoza.
-              </p>
-            </article>
-            <article class="rounded-2xl border border-yellow-200 bg-yellow-50 p-6">
-              <h3 data-i18n="snapshot_pain_title" class="font-['Space_Grotesk'] text-xl font-semibold text-emerald-700">Current operational gaps</h3>
-              <p data-i18n="snapshot_pain_text" class="mt-3 text-sm leading-6 text-slate-600">
-                Inventory is fragmented across warehouses, carrier operations are manual, and reporting is assembled by hand.
-              </p>
-            </article>
+          <div id="snapshotCards" class="mt-8 grid gap-5 lg:grid-cols-2">
           </div>
         </div>
       </section>
@@ -279,8 +187,7 @@
         <section aria-labelledby="contact-title">
           <h2 id="contact-title" data-i18n="contact_title" class="font-['Space_Grotesk'] text-xl font-semibold text-slate-900">Contact</h2>
           <p data-i18n="contact_email" class="mt-3 text-sm text-slate-600">Email: growth@trackflow.example</p>
-          <p data-i18n="contact_phone" class="mt-1 text-sm text-slate-600">Phone: +1 213 555 0198</p>
-          <p data-i18n="contact_location" class="mt-1 text-sm text-slate-600">Los Angeles, US and Zaragoza, ES</p>
+          <p data-i18n="contact_location" class="mt-1 text-sm text-slate-600">Distributed teams, connected operations</p>
         </section>
         <section aria-label="Action links" class="md:justify-self-end">
           <a
@@ -301,6 +208,7 @@
       </p>
     </footer>
 
+    <script src="components.js"></script>
     <script src="language.js"></script>
     <script src="index.js"></script>
   </body>
