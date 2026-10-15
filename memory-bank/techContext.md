@@ -8,13 +8,16 @@ This is a company-project monorepo. User interfaces belong in `uis/`, backend AP
 
 - Root application: Next.js 15, React 19, and TypeScript, with App Router code in `app/`, reusable UI in `components/`, candidate API helpers in `lib/`, and candidate types in `types/`. The current root application is a candidate-pipeline demo; do not treat it as TrackFlow domain truth.
 - `uis/website/`: standalone Next.js 15, React 19, and TypeScript app. App Router pages are `/` (corporate homepage) and `/application` (locally validated simulated onboarding form). Reusable typed site sections are in `app/components.tsx`; its own `package.json` runs the development server on port 3000.
-- `uis/backoffice/`: standalone Next.js 15, React 19, and TypeScript app with an independent operations layout. Typed local sample data in `lib/demo-data.ts` is passed through the existing M2 algorithms imported directly from root `src/utils/`; `app/dashboard.tsx` renders shipment activity and computed analytics. Its own `package.json` runs the development server on port 3001. There is no live API connection.
+- `uis/backoffice/`: standalone Next.js 15, React 19, and TypeScript app on port 3001. The existing overview still displays illustrative shipment/M2 analytics. Protected inventory routes under `app/backoffice/inventory/` use `lib/inventory.ts` and `lib/api-client.ts` to access the FastAPI service; login is at `/backoffice/login`, with JWT credentials in browser localStorage.
+- `services/`: FastAPI service on port 8000. `auth.py` registers/logs in operative accounts using TinyDB, password hashes, and expiring JWTs. `models.py`, `schemas.py`, and `routers/inventory.py` implement `SKU`, `StockEntry`, and `StockExit` against the configured Supabase PostgreSQL URL; current stock is calculated per warehouse. Private local configuration belongs in ignored `services/.env`; tests use in-memory SQLite and temporary TinyDB.
 | Run public website | `npm --prefix uis/website run dev` (port 3000) |
 | Typecheck public website | `npm --prefix uis/website run typecheck` |
 | Build public website | `npm --prefix uis/website run build` |
 | Run backoffice | `npm --prefix uis/backoffice run dev` (port 3001) |
 | Typecheck backoffice | `npm --prefix uis/backoffice run typecheck` |
 | Build backoffice | `npm --prefix uis/backoffice run build` |
+| Run FastAPI | `services/.venv/bin/uvicorn services.main:app --reload --port 8000` |
+| Test FastAPI | `services/.venv/bin/python -m pytest services/tests -q` |
 - `uis/backoffice/`: TrackFlow internal operations UI, implemented as static HTML/CSS/vanilla JavaScript with sample-only metrics. Its entry view is `index.html`; it has no live API connection.
 - `uis/talent-pipeline-tracker/`: a separate static candidate-tracker project that talks to the 4Geeks tracker API. It is not a TrackFlow operations application.
 
